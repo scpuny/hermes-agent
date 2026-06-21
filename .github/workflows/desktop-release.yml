@@ -150,7 +150,7 @@ jobs:
         run: npm ci
 
       - name: Install TUI dependencies
-        run: npm --prefix ui-tui ci
+        run: npm --prefix ui-tui install
 
       - name: Build bundled TUI payload
         run: npm --prefix ui-tui run build
