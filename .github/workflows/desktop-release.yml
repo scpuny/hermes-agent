@@ -306,8 +306,7 @@ jobs:
           if [[ "$CHANNEL" == "nightly" ]]; then
             git tag -f "$RELEASE_TAG" "$GITHUB_SHA"
             git push origin "refs/tags/$RELEASE_TAG" --force
-            notes="Automated nightly desktop build from main. This prerelease is replaced on each new run.
-Available builds: mac-arm64(M芯片), mac-x64(Intel), Windows"
+            notes="Automated nightly desktop build from main. This prerelease is replaced on each new run. Available builds: mac-arm64(M芯片), mac-x64(Intel), Windows"
             if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
               while IFS= read -r asset_name; do
                 gh release delete-asset "$RELEASE_TAG" "$asset_name" --yes
@@ -325,8 +324,7 @@ Available builds: mac-arm64(M芯片), mac-x64(Intel), Windows"
             fi
           else
             if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
-              notes="Automated desktop artifacts attached by desktop-release workflow.
-Available builds: mac-arm64(M芯片), mac-x64(Intel), Windows"
+              notes="Automated desktop artifacts attached by desktop-release workflow. Available builds: mac-arm64(M芯片), mac-x64(Intel), Windows"
               gh release create "$RELEASE_TAG" \
                 --target "$GITHUB_SHA" \
                 --title "$RELEASE_NAME" \
