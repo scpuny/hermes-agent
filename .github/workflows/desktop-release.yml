@@ -81,7 +81,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
   build:
-    if: github.repository == 'NousResearch/hermes-agent'
+    if: github.repository == 'scpuny/hermes-agent'
     needs: prepare
     strategy:
       fail-fast: false
@@ -268,7 +268,7 @@ jobs:
           if-no-files-found: error
 
   publish:
-    if: github.repository == 'NousResearch/hermes-agent'
+    if: github.repository == 'scpuny/hermes-agent'
     needs: [prepare, build]
     runs-on: ubuntu-latest
     env:
