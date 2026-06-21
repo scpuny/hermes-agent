@@ -29,7 +29,7 @@ concurrency:
 
 jobs:
   prepare:
-    if: github.repository == 'NousResearch/hermes-agent'
+    if: github.repository == 'scpuny/hermes-agent'
     runs-on: ubuntu-latest
     outputs:
       channel: ${{ steps.meta.outputs.channel }}
